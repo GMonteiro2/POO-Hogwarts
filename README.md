@@ -62,7 +62,6 @@ poo-hogwarts/
 - [x] Quiz interativo por módulo
 - [x] Sistema de progresso
 - [x]Certificado de conclusão
-
 ---
 
 Feito com ☕ e muita magia 🪄
