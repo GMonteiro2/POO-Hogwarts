@@ -610,3 +610,37 @@ pre {
 .btn-nav.proximo:hover {
   box-shadow: 0 0 20px rgba(201,168,76,0.4);
 }
+/* QUIZ CTA */
+.quiz-cta {
+  padding: 5rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(201,168,76,0.08);
+}
+
+.quiz-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quiz-cta-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.quiz-cta-titulo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.quiz-cta-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(245,230,200,0.65);
+  margin-bottom: 2rem;
+}

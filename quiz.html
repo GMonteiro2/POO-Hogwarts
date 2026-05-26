@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Final — POO Hogwarts</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">POO <span>• Magia & Código</span></a>
+    <div class="nav-progresso">
+      <span class="modulo-atual" id="progresso-texto">Questão 1 de 18</span>
+      <div class="barra-progresso">
+        <div class="barra-fill" id="barra-fill" style="width: 0%"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="quiz-container">
+
+    <!-- TELA INICIAL -->
+    <div id="tela-inicio" class="tela ativa">
+      <div class="inicio-icon">⚡</div>
+      <h1 class="inicio-titulo">Torneio Tribruxo</h1>
+      <p class="inicio-subtitulo">O Quiz Final de POO</p>
+      <p class="inicio-desc">
+        Você estudou os 6 módulos. Agora é hora de provar que é um
+        verdadeiro bruxo da programação. Responda 18 questões sobre
+        todos os pilares da POO.<br><br>
+        <strong>Você tem 2 tentativas.</strong> Cada uma com questões diferentes.
+        Precisa de <strong>70% ou mais</strong> para ser aprovado.
+      </p>
+      <button class="btn-primary" id="btn-iniciar">⚡ Começar o Torneio</button>
+    </div>
+
+    <!-- TELA DO QUIZ -->
+    <div id="tela-quiz" class="tela">
+      <div class="quiz-header">
+        <span class="quiz-tentativa" id="tentativa-label">1ª Tentativa</span>
+        <span class="quiz-modulo" id="modulo-label">Módulo 1</span>
+      </div>
+      <div class="questao-numero" id="questao-numero">Questão 1</div>
+      <h2 class="questao-texto" id="questao-texto"></h2>
+      <div class="alternativas" id="alternativas"></div>
+      <button class="btn-primary" id="btn-proxima" style="display:none">Próxima →</button>
+    </div>
+
+    <!-- TELA DE RESULTADO -->
+    <div id="tela-resultado" class="tela">
+      <div id="resultado-aprovado" style="display:none">
+        <div class="selo">🏆</div>
+        <h1 class="resultado-titulo aprovado">Parabéns, Bruxo!</h1>
+        <p class="resultado-sub">Você foi aprovado no Torneio Tribruxo!</p>
+        <div class="pontuacao" id="pontuacao-aprovado"></div>
+        <a href="index.html" class="btn-primary" style="text-decoration:none">← Voltar ao início</a>
+      </div>
+
+      <div id="resultado-reprovado-1" style="display:none">
+        <div class="selo">😬</div>
+        <h1 class="resultado-titulo reprovado">Quase lá!</h1>
+        <p class="resultado-sub">Você não atingiu 70%. Mas ainda tem uma chance!</p>
+        <div class="pontuacao" id="pontuacao-rep1"></div>
+        <div class="feedback-modulos" id="feedback-rep1"></div>
+        <button class="btn-primary" id="btn-segunda-chance">⚡ Usar 2ª Tentativa</button>
+      </div>
+
+      <div id="resultado-reprovado-final" style="display:none">
+        <div class="selo">💀</div>
+        <h1 class="resultado-titulo reprovado">Reprovado</h1>
+        <p class="resultado-sub">Você não passou nas duas tentativas.</p>
+        <div class="pontuacao" id="pontuacao-rep-final"></div>
+        <div class="feedback-modulos" id="feedback-rep-final"></div>
+        <div class="refazer-box">
+          <p class="refazer-texto">Para se tornar um verdadeiro bruxo, você precisa voltar ao início e revisar os módulos com dificuldade!</p>
+          <a href="index.html" class="btn-primary" style="text-decoration:none">🔄 Refazer o Curso</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

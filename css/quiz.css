@@ -1,0 +1,311 @@
+/* TELAS */
+.tela { display: none; }
+.tela.ativa { display: block; }
+
+/* CONTAINER */
+.quiz-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+  min-height: 100vh;
+}
+
+/* TELA INICIAL */
+.inicio-icon {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.inicio-titulo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.inicio-subtitulo {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: rgba(240,192,96,0.5);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.inicio-desc {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: rgba(245,230,200,0.7);
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+}
+
+.inicio-desc strong { color: var(--gold-light); }
+
+/* QUIZ HEADER */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-tentativa {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.quiz-modulo {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,230,200,0.4);
+}
+
+/* QUESTÃO */
+.questao-numero {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.5);
+  margin-bottom: 1rem;
+}
+
+.questao-texto {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--parchment);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* ALTERNATIVAS */
+.alternativas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.alternativa {
+  padding: 1rem 1.5rem;
+  background: rgba(245,230,200,0.03);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  color: rgba(245,230,200,0.8);
+  font-family: 'Crimson Text', serif;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.alternativa:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: rgba(201,168,76,0.3);
+  color: var(--parchment);
+}
+
+.alternativa.selecionada {
+  background: rgba(201,168,76,0.15);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.alternativa-letra {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: var(--gold);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* RESULTADO */
+.selo {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.resultado-titulo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.resultado-titulo.aprovado {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.resultado-titulo.reprovado {
+  color: #FF6B6B;
+}
+
+.resultado-sub {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(245,230,200,0.6);
+  margin-bottom: 2rem;
+}
+
+.pontuacao {
+  text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 3rem;
+  color: var(--gold-light);
+  margin-bottom: 2rem;
+}
+
+/* FEEDBACK MÓDULOS */
+.feedback-modulos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.feedback-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.6);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.feedback-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(201,168,76,0.1);
+  background: rgba(245,230,200,0.02);
+}
+
+.feedback-item.fraco {
+  border-color: rgba(255,107,107,0.3);
+  background: rgba(255,107,107,0.05);
+}
+
+.feedback-item.medio {
+  border-color: rgba(255,214,0,0.2);
+  background: rgba(255,214,0,0.03);
+}
+
+.feedback-item.forte {
+  border-color: rgba(75,200,100,0.2);
+  background: rgba(75,200,100,0.03);
+}
+
+.feedback-modulo-nome {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--parchment);
+}
+
+.feedback-acertos {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+}
+
+.feedback-item.fraco .feedback-acertos { color: #FF6B6B; }
+.feedback-item.medio .feedback-acertos { color: #FFD700; }
+.feedback-item.forte .feedback-acertos { color: #4BC864; }
+
+/* REFAZER BOX */
+.refazer-box {
+  margin-top: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(255,107,107,0.2);
+  border-radius: 12px;
+  background: rgba(255,107,107,0.04);
+  text-align: center;
+}
+
+.refazer-texto {
+  font-size: 1.05rem;
+  color: rgba(245,230,200,0.65);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* BTN CENTER */
+#tela-inicio .btn-primary,
+#tela-resultado .btn-primary {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+/* QUIZ CTA */
+.quiz-cta {
+  padding: 5rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(201,168,76,0.08);
+}
+
+.quiz-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quiz-cta-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.quiz-cta-titulo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.quiz-cta-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(245,230,200,0.65);
+  margin-bottom: 2rem;
+}
