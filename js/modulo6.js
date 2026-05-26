@@ -127,7 +127,10 @@ if (atividade) {
     </ul>
 
     <div class="nav-modulos">
-      <a href="modulo-5.html" class="btn-nav">← Módulo 5</a>
+      <a href="../index.html" class="btn-nav">← Voltar</a>
+      <button id="btn-concluido" class="btn-concluido" data-modulo="modulo-6">
+        Marcar como Concluído ✓
+      </button>
       <a href="../index.html" class="btn-nav proximo">🏆 Concluir Curso →</a>
     </div>
   `;

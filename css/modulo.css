@@ -1,0 +1,48 @@
+/* BOTÃO CONCLUÍDO */
+.btn-concluido {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  background: transparent;
+  color: #4BC864;
+  border: 1px solid rgba(75,200,100,0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-concluido:hover {
+  background: rgba(75,200,100,0.1);
+  border-color: #4BC864;
+}
+
+.btn-concluido.marcado {
+  background: rgba(75,200,100,0.1);
+  border-color: #4BC864;
+  color: #4BC864;
+  cursor: default;
+}
+
+/* SELO NO CARD */
+.module-card .selo-concluido {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.module-card.concluido {
+  border-color: rgba(75,200,100,0.3) !important;
+}
+
+.module-card.concluido .selo-concluido {
+  opacity: 1;
+}
+
+.module-card.concluido .module-tag {
+  color: #4BC864;
+}

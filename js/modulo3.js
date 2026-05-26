@@ -118,8 +118,11 @@ if (atividade) {
       <li>Método <strong>sacar(valor)</strong> — remove valor se houver saldo suficiente</li>
       <li>Bônus: tente acessar <strong>cofre.__saldo</strong> diretamente e veja o erro!</li>
     </ul>
-    <div class="nav-modulos">
-      <a href="modulo-2.html" class="btn-nav">← Módulo 2</a>
+   <div class="nav-modulos">
+      <a href="../index.html" class="btn-nav">← Voltar</a>
+      <button id="btn-concluido" class="btn-concluido" data-modulo="modulo-3">
+        Marcar como Concluído ✓
+      </button>
       <a href="modulo-4.html" class="btn-nav proximo">Módulo 4 →</a>
     </div>
   `;

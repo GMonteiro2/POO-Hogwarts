@@ -90,9 +90,12 @@ if (atividade) {
       <li>Bônus: adicione um atributo <strong>fundador</strong> e inclua no apresentar()</li>
     </ul>
 
-    <div class="nav-modulos">
+   <div class="nav-modulos">
       <a href="../index.html" class="btn-nav">← Voltar</a>
-      <a href="#" class="btn-nav proximo">Módulo 2 — Em breve →</a>
+      <button id="btn-concluido" class="btn-concluido" data-modulo="modulo-1">
+        Marcar como Concluído ✓
+      </button>
+      <a href="modulo-2.html" class="btn-nav proximo">Módulo 2 →</a>
     </div>
   `;
 }

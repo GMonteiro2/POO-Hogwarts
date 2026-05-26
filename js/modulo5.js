@@ -137,8 +137,11 @@ if (atividade) {
       <li>Bônus: adicione uma quarta criatura <strong>Hipogrifo</strong> sem alterar o loop!</li>
     </ul>
 
-    <div class="nav-modulos">
-      <a href="modulo-4.html" class="btn-nav">← Módulo 4</a>
+   <div class="nav-modulos">
+      <a href="../index.html" class="btn-nav">← Voltar</a>
+      <button id="btn-concluido" class="btn-concluido" data-modulo="modulo-5">
+        Marcar como Concluído ✓
+      </button>
       <a href="modulo-6.html" class="btn-nav proximo">Módulo 6 →</a>
     </div>
   `;

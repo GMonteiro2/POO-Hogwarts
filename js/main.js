@@ -76,3 +76,56 @@ function animarAoScroll() {
 criarEstrelas();
 scrollSuave();
 animarAoScroll();
+
+// SISTEMA DE PROGRESSO
+function salvarProgresso(modulo) {
+  const progresso = JSON.parse(localStorage.getItem('poo-hogwarts-progresso') || '[]');
+  if (!progresso.includes(modulo)) {
+    progresso.push(modulo);
+    localStorage.setItem('poo-hogwarts-progresso', JSON.stringify(progresso));
+  }
+}
+
+function carregarProgresso() {
+  return JSON.parse(localStorage.getItem('poo-hogwarts-progresso') || '[]');
+}
+
+function atualizarCardsProgresso() {
+  const progresso = carregarProgresso();
+  document.querySelectorAll('.module-card[data-modulo]').forEach(card => {
+    const modulo = card.getAttribute('data-modulo');
+    if (progresso.includes(modulo)) {
+      card.classList.add('concluido');
+      const tag = card.querySelector('.module-tag');
+      if (tag) tag.textContent = '✅ Concluído';
+    }
+  });
+}
+
+function marcarConcluido(modulo) {
+  salvarProgresso(modulo);
+  const btn = document.getElementById('btn-concluido');
+  if (btn) {
+    btn.textContent = '✅ Módulo Concluído!';
+    btn.classList.add('marcado');
+    btn.disabled = true;
+  }
+}
+
+// Roda ao carregar a página
+window.addEventListener('DOMContentLoaded', () => {
+  atualizarCardsProgresso();
+
+  // Verifica se btn-concluido existe (páginas de módulo)
+  const btn = document.getElementById('btn-concluido');
+  if (btn) {
+    const modulo = btn.getAttribute('data-modulo');
+    const progresso = carregarProgresso();
+    if (progresso.includes(modulo)) {
+      btn.textContent = '✅ Módulo Concluído!';
+      btn.classList.add('marcado');
+      btn.disabled = true;
+    }
+    btn.addEventListener('click', () => marcarConcluido(modulo));
+  }
+});
