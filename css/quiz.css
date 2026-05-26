@@ -275,3 +275,46 @@
   width: fit-content;
   margin: 0 auto;
 }
+/* CERTIFICADO INPUT */
+.certificado-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 12px;
+  background: rgba(201,168,76,0.03);
+}
+
+.certificado-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.7);
+}
+
+.input-nome {
+  background: rgba(245,230,200,0.05);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 6px;
+  padding: 12px 20px;
+  color: var(--parchment);
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-nome:focus {
+  border-color: var(--gold);
+}
+
+.input-nome::placeholder {
+  color: rgba(245,230,200,0.3);
+}

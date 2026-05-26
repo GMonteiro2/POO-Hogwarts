@@ -49,14 +49,20 @@
     </div>
 
     <!-- TELA DE RESULTADO -->
-    <div id="tela-resultado" class="tela">
-      <div id="resultado-aprovado" style="display:none">
-        <div class="selo">🏆</div>
-        <h1 class="resultado-titulo aprovado">Parabéns, Bruxo!</h1>
-        <p class="resultado-sub">Você foi aprovado no Torneio Tribruxo!</p>
-        <div class="pontuacao" id="pontuacao-aprovado"></div>
-        <a href="index.html" class="btn-primary" style="text-decoration:none">← Voltar ao início</a>
-      </div>
+    <div id="resultado-aprovado" style="display:none">
+  <div class="selo">🏆</div>
+  <h1 class="resultado-titulo aprovado">Parabéns, Bruxo!</h1>
+  <p class="resultado-sub">Você foi aprovado no Torneio Tribruxo!</p>
+  <div class="pontuacao" id="pontuacao-aprovado"></div>
+
+  <div class="certificado-input">
+    <p class="certificado-label">Digite seu nome para o certificado:</p>
+    <input type="text" id="input-nome" class="input-nome" placeholder="Seu nome completo"/>
+    <button class="btn-primary" id="btn-gerar-cert">🏆 Gerar Certificado</button>
+  </div>
+
+  <a href="index.html" class="btn-secondary" style="text-decoration:none; display:block; width:fit-content; margin: 1rem auto 0;">← Voltar ao início</a>
+</div>
 
       <div id="resultado-reprovado-1" style="display:none">
         <div class="selo">😬</div>

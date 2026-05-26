@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificado — POO Hogwarts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #F0C060;
+      --gold-dark: #8B6914;
+      --parchment: #F5E6C8;
+      --parchment-dark: #E8D5A3;
+      --ink: #1A0A00;
+      --bg: #0D0A06;
+    }
+
+    body {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      font-family: 'Crimson Text', serif;
+    }
+
+    .acoes {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: var(--ink);
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.4);
+    }
+
+    .btn-outline:hover { background: rgba(201,168,76,0.1); }
+
+    /* CERTIFICADO */
+    .certificado {
+      width: 900px;
+      max-width: 100%;
+      background: var(--parchment);
+      position: relative;
+      padding: 60px;
+      box-shadow: 0 0 80px rgba(201,168,76,0.2);
+    }
+
+    /* BORDA ORNAMENTAL */
+    .certificado::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 2px solid var(--gold-dark);
+      pointer-events: none;
+    }
+
+    .certificado::after {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(139,105,20,0.4);
+      pointer-events: none;
+    }
+
+    /* CANTOS */
+    .canto {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      color: var(--gold-dark);
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .canto-tl { top: 6px; left: 6px; }
+    .canto-tr { top: 6px; right: 6px; transform: scaleX(-1); }
+    .canto-bl { bottom: 6px; left: 6px; transform: scaleY(-1); }
+    .canto-br { bottom: 6px; right: 6px; transform: scale(-1); }
+
+    .cert-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--ink);
+    }
+
+    .cert-escola {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .cert-titulo {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    .cert-subtitulo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .cert-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .cert-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dark), transparent);
+    }
+
+    .cert-divider-symbol {
+      color: var(--gold-dark);
+      font-size: 1.2rem;
+    }
+
+    .cert-certifica {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(26,10,0,0.5);
+      margin-bottom: 0.8rem;
+    }
+
+    .cert-nome {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--gold-dark), #5a3e00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cert-texto {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: rgba(26,10,0,0.75);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+    }
+
+    .cert-modulos {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .cert-modulo-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid var(--gold-dark);
+      color: var(--gold-dark);
+      border-radius: 20px;
+    }
+
+    .cert-rodape {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(139,105,20,0.3);
+    }
+
+    .cert-assinatura {
+      text-align: center;
+    }
+
+    .cert-assinatura-nome {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 0.9rem;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .cert-assinatura-cargo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(26,10,0,0.4);
+    }
+
+    .cert-assinatura-linha {
+      width: 120px;
+      height: 1px;
+      background: rgba(139,105,20,0.4);
+      margin: 0.5rem auto;
+    }
+
+    .cert-selo {
+      font-size: 3.5rem;
+      filter: drop-shadow(0 2px 4px rgba(139,105,20,0.3));
+    }
+
+    .cert-data {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: rgba(26,10,0,0.4);
+      text-transform: uppercase;
+    }
+
+    /* PRINT */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .acoes { display: none; }
+      .certificado {
+        box-shadow: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="acoes">
+    <button class="btn btn-gold" onclick="window.print()">🖨️ Salvar como PDF</button>
+    <a href="index.html" class="btn btn-outline">← Voltar ao início</a>
+  </div>
+
+  <div class="certificado">
+    <div class="canto canto-tl">❧</div>
+    <div class="canto canto-tr">❧</div>
+    <div class="canto canto-bl">❧</div>
+    <div class="canto canto-br">❧</div>
+
+    <div class="cert-content">
+      <p class="cert-escola">Escola de Magia e Bruxaria de Hogwarts</p>
+      <h1 class="cert-titulo">Certificado de Conclusão</h1>
+      <p class="cert-subtitulo">Programação Orientada a Objetos em Python</p>
+
+      <div class="cert-divider">
+        <div class="cert-divider-line"></div>
+        <div class="cert-divider-symbol">⚡</div>
+        <div class="cert-divider-line"></div>
+      </div>
+
+      <p class="cert-certifica">Certificamos que</p>
+      <div class="cert-nome" id="cert-nome">Carregando...</div>
+
+      <p class="cert-texto">
+        concluiu com êxito todos os módulos do curso
+        <strong>POO Hogwarts</strong>, demonstrando domínio dos pilares
+        da Programação Orientada a Objetos através do universo mágico
+        de Harry Potter.
+      </p>
+
+      <div class="cert-modulos">
+        <span class="cert-modulo-tag">Classes & Objetos</span>
+        <span class="cert-modulo-tag">Atributos & Métodos</span>
+        <span class="cert-modulo-tag">Encapsulamento</span>
+        <span class="cert-modulo-tag">Herança</span>
+        <span class="cert-modulo-tag">Polimorfismo</span>
+        <span class="cert-modulo-tag">Abstração</span>
+      </div>
+
+      <div class="cert-divider">
+        <div class="cert-divider-line"></div>
+        <div class="cert-divider-symbol">✦</div>
+        <div class="cert-divider-line"></div>
+      </div>
+
+      <div class="cert-rodape">
+        <div class="cert-assinatura">
+          <div class="cert-assinatura-linha"></div>
+          <div class="cert-assinatura-nome">Albus Dumbledore</div>
+          <div class="cert-assinatura-cargo">Diretor de Hogwarts</div>
+        </div>
+
+        <div class="cert-selo">🏆</div>
+
+        <div class="cert-assinatura">
+          <div class="cert-assinatura-linha"></div>
+          <div class="cert-assinatura-nome" id="cert-data">—</div>
+          <div class="cert-assinatura-cargo">Data de Conclusão</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get('nome') || 'Bruxo Anônimo';
+    const data = params.get('data') || new Date().toLocaleDateString('pt-BR');
+
+    document.getElementById('cert-nome').textContent = nome;
+    document.getElementById('cert-data').textContent = data;
+  </script>
+</body>
+</html>

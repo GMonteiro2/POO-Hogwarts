@@ -332,6 +332,21 @@ function mostrarResultado() {
   if (porcentagem >= 70) {
     document.getElementById('resultado-aprovado').style.display = 'block';
     document.getElementById('pontuacao-aprovado').textContent = `${totalAcertos}/18 — ${porcentagem}%`;
+
+    setTimeout(() => {
+      const btn = document.getElementById('btn-gerar-cert');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const nome = document.getElementById('input-nome').value.trim();
+          if (!nome) {
+            alert('Digite seu nome para gerar o certificado!');
+            return;
+          }
+          const data = new Date().toLocaleDateString('pt-BR');
+          window.location.href = `certificado.html?nome=${encodeURIComponent(nome)}&data=${encodeURIComponent(data)}`;
+        });
+      }
+    }, 100);
   } else if (tentativa === 1) {
     document.getElementById('resultado-reprovado-1').style.display = 'block';
     document.getElementById('pontuacao-rep1').textContent = `${totalAcertos}/18 — ${porcentagem}%`;
@@ -345,7 +360,8 @@ function mostrarResultado() {
 
 function mostrarTela(id) {
   document.querySelectorAll('.tela').forEach(t => t.classList.remove('ativa'));
-  document.getElementById(id).classList.add('ativa');
+  const tela = document.getElementById(id);
+  if (tela) tela.classList.add('ativa');
 }
 
 // =============================
@@ -359,4 +375,15 @@ document.getElementById('btn-segunda-chance').addEventListener('click', () => {
   tentativa = 2;
   document.getElementById('resultado-reprovado-1').style.display = 'none';
   iniciarQuiz();
+});
+
+// CERTIFICADO
+document.getElementById('btn-gerar-cert').addEventListener('click', () => {
+  const nome = document.getElementById('input-nome').value.trim();
+  if (!nome) {
+    alert('Digite seu nome para gerar o certificado!');
+    return;
+  }
+  const data = new Date().toLocaleDateString('pt-BR');
+  window.location.href = `certificado.html?nome=${encodeURIComponent(nome)}&data=${encodeURIComponent(data)}`;
 });
