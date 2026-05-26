@@ -59,9 +59,9 @@ poo-hogwarts/
 
 - [x] Landing Page
 - [x] 6 Módulos de conteúdo
-- [ ] Quiz interativo por módulo
-- [ ] Sistema de progresso
-- [ ] Certificado de conclusão
+- [x] Quiz interativo por módulo
+- [x] Sistema de progresso
+- [x]Certificado de conclusão
 
 ---
 
